@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人网站 - 简历与博客</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #2c3e50, #4b6cb7);
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+    }
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+  <!-- 导航栏 -->
+  <nav class="bg-gray-800 p-4">
+    <div class="max-w-6xl mx-auto flex justify-between">
+      <a href="#" class="text-xl font-bold">我的网站</a>
+      <div>
+        <a href="#about" class="px-4 hover:text-blue-300">关于我</a>
+        <a href="#blog" class="px-4 hover:text-blue-300">博客</a>
+        <a href="#contact" class="px-4 hover:text-blue-300">联系</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 首页 -->
+  <section class="section text-center mt-10">
+    <h1 class="text-4xl font-bold mb-4">欢迎来到我的个人网站</h1>
+    <p class="text-lg">我是INFP-A，热爱技术与创意，分享动态壁纸与感悟</p>
+  </section>
+
+  <!-- 关于我 -->
+  <section id="about" class="section mt-10">
+    <h2 class="text-3xl font-bold mb-4">关于我</h2>
+    <p><strong>教育背景</strong>：西安某大学，计算机科学学士（2018–2022）</p>
+    <p><strong>工作经历</strong>：</p>
+    <ul class="list-disc ml-6">
+      <li>Java开发工程师，西安某科技公司（2023–至今）：开发Web应用，学习前端技术。</li>
+      <li>工艺工程师，某制造工厂（2022–2023）：优化生产流程，撰写报告。</li>
+    </ul>
+    <p><strong>技能</strong>：Figma、HTML/CSS、JavaScript、动态壁纸设计（学习中）</p>
+    <p><strong>作品</strong>：<a href="https://bilibili.com" target="_blank" class="text-blue-300">B站动态壁纸</a></p>
+  </section>
+
+  <!-- 博客 -->
+  <section id="blog" class="section mt-10">
+    <h2 class="text-3xl font-bold mb-4">博客</h2>
+    <article class="mb-6">
+      <h3 class="text-2xl"><a href="blog1.html" class="hover:text-blue-300">如何用AI制作动态壁纸</a></h3>
+      <p class="text-sm text-gray-300">2025-07-28</p>
+      <p>探索Uizard和Runway，快速生成治愈系壁纸...</p>
+    </article>
+    <article>
+      <h3 class="text-2xl"><a href="blog2.html" class="hover:text-blue-300">我的INFP-A职业转行心得</a></h3>
+      <p class="text-sm text-gray-300">2025-07-30</p>
+      <p>从Java开发到UI设计的转变，找到适合自己的路...</p>
+    </article>
+  </section>
+
+  <!-- 联系 -->
+  <section id="contact" class="section mt-10">
+    <h2 class="text-3xl font-bold mb-4">联系我</h2>
+    <p>B站：<a href="https://bilibili.com" target="_blank" class="text-blue-300">我的主页</a></p>
+    <p>邮箱：example@email.com</p>
+  </section>
+
+  <script>
+    // 粒子动画（动态壁纸背景）
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const particles = [];
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 1,
+        vx: Math.random() * 2 - 1,
+        vy: Math.random() * 2 - 1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+</body>
+</html>
