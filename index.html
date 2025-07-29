@@ -49,18 +49,65 @@
   </section>
 
   <!-- 关于我 -->
-  <section id="about" class="section mt-10">
-    <h2 class="text-3xl font-bold mb-4">关于我</h2>
-    <p><strong>教育背景</strong>:普通工科学士(2017-2021)</p>
-    <p><strong>工作经历</strong>:</p>
-    <ul class="list-disc ml-6">
-      <li>Java开发工程师,北京某公司(2023-2025.3):开发Web应用,学习前端技术。</li>
-      <li>Java开发工程师,深圳某科技公司(2022.7-2023.7):开发Web应用,学习前端技术。</li>
-      <li>工艺工程师,某制造工厂(2021-2022)优化生产流程，撰写报告。</li>
-    </ul>
-    <p><strong>技能</strong>:Figma、HTML/CSS、JavaScript、动态壁纸设计（学习中）</p>
-    <p><strong>作品</strong>:<a href="https://bilibili.com" target="_blank" class="text-blue-300">B站动态壁纸</a></p>
+  <!-- 关于我 -->
+<section id="about" class="section mt-10 bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl">
+    <h2 class="text-3xl font-bold mb-6 text-white text-center">关于我</h2>
+    <p class="mb-4 text-white/80"><strong>教育背景：</strong>工科学士 (2017-2021)</p>
+    <p class="mb-4 text-white/80"><strong>工作经历：</strong></p>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- 北京某公司 -->
+      <div class="relative rounded-xl overflow-hidden border border-white/30 bg-white/10 backdrop-blur-lg p-6 shadow-lg hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold text-white mb-2">软件开发工程师</h3>
+        <p class="text-sm text-white/70 mb-3">北京某公司 | 2023.11 - 2025.3</p>
+        <div class="mb-3">
+          <p class="font-semibold text-white/90 mb-1">项目产品：日志审计系统</p>
+          <ul class="list-disc list-inside text-white/80 text-sm space-y-1">
+            <li>参与系统需求分析，与团队协作完成功能模块的设计与实现</li>
+            <li>用 ElasticSearch 技术进行大数据存储与处理，优化数据检索与分析效率</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold text-white/90 mb-1">项目产品：无纸化会议系统</p>
+          <ul class="list-disc list-inside text-white/80 text-sm space-y-1">
+            <li>基于Springboot的无纸化会议系统，负责前端页面的优化</li>
+            <li>会议系统中用户聊天模块的设计和开发</li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- 深圳某科技公司 -->
+      <div class="relative rounded-xl overflow-hidden border border-white/30 bg-white/10 backdrop-blur-lg p-6 shadow-lg hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold text-white mb-2">Java开发工程师</h3>
+        <p class="text-sm text-white/70 mb-3">深圳某公司 | 2022.7 - 2023.7</p>
+        <p class="font-semibold text-white/90 mb-1">项目产品：资讯App</p>
+        <ul class="list-disc list-inside text-white/80 text-sm space-y-1">
+          <li>参与需求分析、技术选型讨论、数据库表设计及接口开发</li>
+          <li>使用 JWT+网关实现双令牌登录与自动续约，确保系统安全性</li>
+          <li>基于 Spring Cloud Gateway 统一鉴权认证，提升接口访问效率</li>
+          <li>集成 FastDFS 搭建分布式文件存储模块，支持高效文件管理</li>
+          <li>利用 RabbitMQ 解决分布式事务一致性，实现文章自动审核功能</li>
+          <li>配置 XXL-Job 定时任务，自动化发布未完成攻略，减少人工干预</li>
+        </ul>
+      </div>
+  
+      <!-- 某制造工厂 -->
+      <div class="relative rounded-xl overflow-hidden border border-white/30 bg-white/10 backdrop-blur-lg p-6 shadow-lg md:col-span-2 hover:scale-105 transition-transform">
+        <h3 class="text-xl font-semibold text-white mb-2">设备工程师</h3>
+        <p class="text-sm text-white/70 mb-3">某制造工厂 | 2021 - 2022</p>
+        <ul class="list-disc list-inside text-white/80 text-sm space-y-1">
+          <li>调试西门子 PLC 程序，适配多场景生产需求</li>
+          <li>使用 Java 开发 CCD 设备接口，更新一体化管理界面，提升设备兼容性</li>
+          <li>解决设备异常问题，与工艺工程师协作优化系统，良率提升</li>
+          <li>参与 5S 管理，更新设备功能并完成成本评估</li>
+        </ul>
+      </div>
+    </div>
+  
+    <p class="mt-6 text-white/80"><strong>技能：</strong>Java、Figma、HTML/CSS、JavaScript、动态壁纸设计(学习中)</p>
+    <p class="mt-2 text-white/80"><strong>作品：</strong><a href="https://bilibili.com" target="_blank" class="text-blue-300 underline">B站动态壁纸</a></p>
   </section>
+  
 
   <!-- 博客 -->
   <section id="blog" class="section mt-10">
@@ -73,7 +120,7 @@
     <article>
       <h3 class="text-2xl"><a href="blog2.html" class="hover:text-blue-300">创意心得</a></h3>
       <p class="text-sm text-gray-300">2025-07-30</p>
-      <p>千里之行始于足下...</p>
+      <p>千里之行,始于足下...</p>
     </article>
   </section>
 
@@ -81,7 +128,7 @@
   <section id="contact" class="section mt-10">
     <h2 class="text-3xl font-bold mb-4">联系我</h2>
     <p>B站:<a href="https://bilibili.com" target="_blank" class="text-blue-300">我的主页</a></p>
-    <p>邮箱:example@email.com</p>
+    <p>邮箱:l359965@163.com</p>
   </section>
 
   <script>
